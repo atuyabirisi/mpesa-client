@@ -11,10 +11,10 @@ function Initiator() {
         ...values,
       })
       .then((res) => {
-        reset();
         console.log(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => reset());
   });
 
   return (
