@@ -2,7 +2,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 
 function Initiator() {
-  const { register, handleSubmit, getValues } = useForm();
+  const { register, handleSubmit, getValues, reset } = useForm();
 
   const initiateSTKPush = handleSubmit(() => {
     const values = getValues();
@@ -11,7 +11,7 @@ function Initiator() {
         ...values,
       })
       .then((res) => {
-        console.log("suCcess");
+        reset();
         console.log(res.data);
       })
       .catch((err) => console.log(err));
